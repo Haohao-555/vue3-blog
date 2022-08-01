@@ -1,14 +1,18 @@
+<!--
+ * @Date: 2022-07-24 15:19:20
+ * @Author: 浩
+ * @LastEditors: 浩
+ * @FilePath: \vue3-blog-1\src\views\blog\component\NavAside\index.vue
+-->
 <template>
   <div class="aside-list">
     <user-item :info="info"></user-item>
-    <tools-item :announce="announce"></tools-item>
     <tag-item :tagList="tagList"></tag-item>
   </div>
 </template>
 <script setup>
 import { ref } from 'vue'
 import UserItem from './component/UserItem'
-import ToolsItem from './component/ToolsItem'
 import TagItem from './component/TagItem'
 
 const info = ref({})
