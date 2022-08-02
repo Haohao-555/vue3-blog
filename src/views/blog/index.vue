@@ -78,6 +78,7 @@ getBlogList()
 .blog {
   .blog-bg {
     background-image: url('http://39.104.61.32/imgHome/blog/bg(1).jpg');
+    // background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;

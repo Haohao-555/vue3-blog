@@ -28,18 +28,18 @@ defineProps({
 })
 </script>
 <style lang="scss" scoped>
-::v-deep .el-card .el-card__body{
+::v-deep .el-card .el-card__body {
   padding: 0px;
 }
 .blog-list {
   .item {
     &:hover {
-      // transform: translateY(-20px);
-      // box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
-      // .hover-box {
-      //   left: 110%;
-      //   transition: all 0.3s;
-      // }
+      transform: translateY(-20px);
+      box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
+      .hover-box {
+        left: 110%;
+        transition: all 0.3s;
+      }
     }
     .blog-item {
       position: relative;
@@ -48,7 +48,7 @@ defineProps({
       .blog-img {
         height: 280px;
         background-repeat: no-repeat;
-         background-image: url('http://39.104.61.32/imgHome/blog/blog(1).jpg');
+        background-image: url('http://39.104.61.32/imgHome/blog/blog(1).jpg');
         background-size: cover;
         background-position: center top;
       }
@@ -63,10 +63,10 @@ defineProps({
           padding-bottom: 12px;
         }
         .blog-about {
-           padding: 12px;
-           box-sizing: border-box;
-           line-height: 24px;
-           text-align: justify;
+          padding: 12px;
+          box-sizing: border-box;
+          line-height: 24px;
+          text-align: justify;
         }
         .tag-list {
           display: flex;
@@ -74,7 +74,11 @@ defineProps({
             font-size: 12px;
             padding: 4px 6px;
             margin: 6px;
-            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background-image: linear-gradient(
+              to right,
+              #6a11cb 0%,
+              #2575fc 100%
+            );
             border-radius: 6px;
             color: #fff;
             &:hover {
@@ -102,19 +106,19 @@ defineProps({
       }
     }
     .hover-box {
-         z-index: 100;
-         width: 100%;
-         height: 100%;
-         position: absolute;
-         left: -1000%;
-         top: 0;
-         background-image: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 0.5),
-          rgba(255, 255, 255, 0)
-        );
-        transform: skew(-30deg);
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: -1000%;
+      top: 0;
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0)
+      );
+      transform: skew(-30deg);
     }
   }
 }

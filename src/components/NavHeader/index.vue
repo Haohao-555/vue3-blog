@@ -6,7 +6,7 @@
 -->
 <template>
   <div class="nav-header">
-    <el-menu :default-active="activeRouter" :class="['el-menu-demo', isClick ? 'active' : '']" router mode="horizontal" background-color="transparent" text-color="#fff" active-text-color="#fff">
+    <el-menu :default-active="activeRouter" :class="['el-menu-demo', isClick ? 'active' : '']" router mode="horizontal" background-color="#000" text-color="#fff" active-text-color="#fff">
         <el-menu-item index="/blog">博客</el-menu-item>
         <el-menu-item index="/message">留言榜</el-menu-item>
         <el-menu-item index="/production">作品集</el-menu-item>
