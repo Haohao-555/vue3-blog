@@ -34,11 +34,13 @@ defineProps({
 .blog-list {
   .item {
     &:hover {
-      transform: translateY(-20px);
-      box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
-      .hover-box {
-        left: 110%;
-        transition: all 0.3s;
+      @media screen and (min-width: 970px){
+        transform: translateY(-20px);
+        box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
+        .hover-box {
+          left: 110%;
+          transition: all 0.3s;
+        }
       }
     }
     .blog-item {
@@ -46,11 +48,17 @@ defineProps({
       overflow: hidden;
       transition: all 0.2s;
       .blog-img {
-        height: 280px;
+        height: 140px;
+        @media screen and (min-width: 970px){
+           height: 280px;
+        }
+        @media screen and (max-width: 750px){
+           height: 180px;
+        }
         background-repeat: no-repeat;
         background-image: url('http://39.104.61.32/imgHome/blog/blog(1).jpg');
         background-size: cover;
-        background-position: center top;
+        background-position: center bottom;
       }
       .blog-info {
         padding: 12px;

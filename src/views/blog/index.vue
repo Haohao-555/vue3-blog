@@ -17,12 +17,12 @@
               </div>
           </el-col>
           <el-col :lg="18" :md="24" :sm="24" :xs="24">
-            <el-row :gutter="20">
+            <el-row :gutter="20" >
               <el-col :md="18">
                 <tools-item></tools-item>
                 <blog-list :list="list"></blog-list>
               </el-col>
-              <el-col :md="6">
+              <el-col :md="6" style="position: relative; top: 0px;">
                  <nav-aside></nav-aside>
               </el-col>
             </el-row>
@@ -77,10 +77,16 @@ getBlogList()
 }
 .blog {
   .blog-bg {
-    background-image: url('http://39.104.61.32/imgHome/blog/bg(1).jpg');
-    // background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    @media screen and (min-width: 970px) {
+      background-image: url('http://39.104.61.32/imgHome/blog/bg(1).jpg');
+      background-position: center bottom;
+    }
+    @media screen and (max-width: 750px) {
+      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+      background-image: url('http://39.104.61.32/imgHome/blog/mobile-bg.jpg');
+      background-position: center bottom;
+    }
     background-repeat: no-repeat;
-    background-position: center bottom;
     background-size: cover;
     min-height: 100%;
     background-attachment: fixed;
