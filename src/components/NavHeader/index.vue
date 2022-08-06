@@ -10,6 +10,7 @@
         <el-menu-item index="/blog">博客</el-menu-item>
         <el-menu-item index="/message">留言榜</el-menu-item>
         <el-menu-item index="/production">作品集</el-menu-item>
+        <el-menu-item index="/about">关于我</el-menu-item>
     </el-menu>
   </div>
 </template>

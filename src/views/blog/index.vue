@@ -10,11 +10,7 @@
       <div class="blog-container">
         <el-row justify="center">
           <el-col :lg="18" :md="24" :sm="24" :xs="24">
-              <div class="banner">
-                  <div class="banner-container">
-                    <!-- <p>用尽一切奔向你</p> -->
-                  </div>
-              </div>
+             <banner></banner>
           </el-col>
           <el-col :lg="18" :md="24" :sm="24" :xs="24">
             <el-row :gutter="20" >
@@ -37,6 +33,7 @@ import { ref } from 'vue'
 import BlogList from './component/BlogList/index'
 import NavAside from './component/NavAside/index'
 import ToolsItem from '@/components/ToolsItem/index'
+import Banner from '@/components/Banner/index'
 const list = ref([])
 const getBlogList = () => {
   list.value = [
@@ -59,7 +56,7 @@ const getBlogList = () => {
         '🌈成果展示项目到今天已经经过 12 天了，下面把这 12 天的目前页面效果展示如下（目前仅差歌曲播放页）🥰 💪🏻主页 💪🏻歌手 💪🏻排行版 💪🏻MV 💪🏻MV 详情 💪🏻歌手介绍 💪🏻歌单详情一 💪🏻歌单详情二 💪🏻歌单详情三 由于时间比较仓促',
       time: '2021-11-07',
       class: '云音乐项目',
-      blogImg: 'http://39.104.61.32/imgHome/blog/blog(5).jpg',
+      blogImg: 'http://39.104.61.32/imgHome/blog/blog(3).jpg',
       tagList: ['vue', 'vue全家桶', 'javascript'],
       num: 1000,
       support: 1000
@@ -77,19 +74,6 @@ getBlogList()
 }
 .blog {
   .blog-bg {
-    @media screen and (min-width: 970px) {
-      background-image: url('http://39.104.61.32/imgHome/blog/bg(1).jpg');
-      background-position: center bottom;
-    }
-    @media screen and (max-width: 750px) {
-      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-      background-image: url('http://39.104.61.32/imgHome/blog/mobile-bg.jpg');
-      background-position: center bottom;
-    }
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%;
-    background-attachment: fixed;
     .blog-container {
       .banner {
         height: 300px;

@@ -7,11 +7,15 @@
 <template>
   <div class="aside-list">
     <user-item :info="info"></user-item>
+    <site-item></site-item>
+    <other-item></other-item>
   </div>
 </template>
 <script setup>
 import { ref } from 'vue'
 import UserItem from './component/UserItem'
+import SiteItem from './component/SiteItem'
+import OtherItem from './component/OtherItem'
 const info = ref({})
 
 // 获取用户信息
