@@ -56,9 +56,9 @@
                     <div class="session">
                       <div class="session-title">🧔🏻 摸鱼</div>
                       <div class="content">
-                        <img src="https://img.shields.io/badge/CSDN-https://blog.csdn.net/weixin_44659458-blue?style=flat-square&logo=CSDN" alt="">
+                        <img src="https://img.shields.io/badge/CSDN-https://blog.csdn.net/weixin__44659458-blue?style=flat-square&logo=CSDN" alt="">
                         <br/>
-                        <img src="https://img.shields.io/badge/Github-https://github.com/Haohao-555?style=flat-square&logo=github" alt="">
+                        <img src="https://img.shields.io/badge/Github-https://github.com/Haohao--555-blue?style=flat-square&logo=github" alt="">
                       </div>
                     </div>
                     <div class="session">

@@ -51,7 +51,7 @@ defineProps({
       @media screen and (min-width: 768px) and (max-width: 992px) {
         height: 220px;
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 760px) {
         height: 180px;
       }
       background-image: url('http://39.104.61.32/imgHome/blog/blog(1).png');
