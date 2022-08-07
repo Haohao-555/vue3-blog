@@ -29,7 +29,7 @@ const sumbit = () => {
       @media screen and (min-width: 992px) {
         height: 240px;
       }
-      @media screen and (min-width: 768px) and (max-width: 992px) {
+      @media screen and (min-width: 769px) and (max-width: 992px) {
         height: 200px;
       }
       @media screen and (max-width: 768px) {

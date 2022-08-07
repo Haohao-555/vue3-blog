@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <el-card class="item" ref="blogRef">
     <div class="blog-item">
       <div class="blog-img"></div>
       <div class="blog-info">
@@ -14,11 +14,11 @@
       </div>
     </div>
     <div class="hover-box"></div>
-  </div>
+  </el-card>
 </template>
 <script setup>
 import { defineProps } from 'vue'
-defineProps({
+const props = defineProps({
   blog: {
     type: Object,
     default: () => {
@@ -26,6 +26,8 @@ defineProps({
     }
   }
 })
+
+const img = `url('${props.blog.blogImg}')`
 </script>
 <style lang="scss" scoped>
 .item {
@@ -54,7 +56,7 @@ defineProps({
       @media screen and (max-width: 760px) {
         height: 180px;
       }
-      background-image: url('http://39.104.61.32/imgHome/blog/blog(1).png');
+      background-image: v-bind(img);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center bottom;
