@@ -15,8 +15,10 @@
           <el-col :lg="18" :md="24" :sm="24" :xs="24">
             <el-row :gutter="20" >
               <el-col :md="18">
-                <tools-item></tools-item>
-                <blog-list :list="list"></blog-list>
+                <div class="wrapper">
+                   <tools-item></tools-item>
+                   <blog-list :list="list"></blog-list>
+                </div>
               </el-col>
               <el-col :md="6" style="position: relative; top: 0px;">
                  <nav-aside></nav-aside>

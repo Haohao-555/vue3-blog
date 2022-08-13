@@ -1,7 +1,13 @@
+<!--
+ * @Date: 2022-08-06 13:30:03
+ * @Author: 浩
+ * @LastEditors: 浩
+ * @FilePath: \vue3-blog-1\src\views\blog\component\NavAside\component\SiteItem.vue
+-->
 <template>
    <el-card>
     <div class="site">
-      <div class="title">网站技术栈</div>
+      <div class="title">⚡网站技术栈</div>
       <div class="content">
         <img src="https://img.shields.io/badge/vue3-3.2.8-brightgreen?style=flat-square" alt="">
         <img src="https://img.shields.io/badge/vue--router-4.0.11-yellowgreen?style=flat-square" alt="">
@@ -18,12 +24,12 @@
     font-weight: bold;
     padding-bottom: 12px;
   }
-   .content {
-      display: flex;
-      flex-wrap: wrap;
-      img {
-        margin: 4px;
-      }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      margin: 4px;
     }
+  }
 }
 </style>

@@ -9,7 +9,7 @@
      <div class="comment-input">
        <el-input type="textarea" placeholder="用尽一切奔向你" v-model="comment"/>
        <div class="option">
-          <el-button @click="sumbit">提交</el-button>
+          <button @click="sumbit" class="btn">提交</button>
        </div>
      </div>
    </div>
@@ -26,6 +26,8 @@ const sumbit = () => {
   .comment-input {
     ::v-deep textarea {
       padding: 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.5);
       @media screen and (min-width: 992px) {
         height: 240px;
       }
@@ -41,6 +43,13 @@ const sumbit = () => {
     margin-top: 12px;
     display: flex;
     justify-content: flex-end;
+    .btn {
+      width: 80px;
+      height: 30px;
+      border-radius: 6px;
+      border: none;
+      background-color: #ceefe4;
+    }
   }
 }
 </style>

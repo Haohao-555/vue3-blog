@@ -8,7 +8,7 @@
    <div class="tools-item">
      <el-card>
         <div class="tools-container">
-          <el-icon class="icon"><Microphone /></el-icon>
+          <div>📢</div>
           <div class="content">{{ toolsData.content }}</div>
         </div>
       </el-card>
@@ -16,7 +16,6 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import { Microphone } from '@element-plus/icons-vue'
 
 // 获取通知
 const toolsData = ref({})

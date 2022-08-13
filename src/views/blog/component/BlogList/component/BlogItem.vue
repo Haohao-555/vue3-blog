@@ -27,13 +27,15 @@ const props = defineProps({
   }
 })
 
-const img = `url('${props.blog.blogImg}')`
+// eslint-disable-next-line
+const imgUrl = `url('${props.blog.blogImg}')`
+
 </script>
 <style lang="scss" scoped>
 .item {
   &:hover {
     @media screen and (min-width: 970px) {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
       box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
       .hover-box {
         left: 110%;
@@ -56,7 +58,7 @@ const img = `url('${props.blog.blogImg}')`
       @media screen and (max-width: 760px) {
         height: 180px;
       }
-      background-image: v-bind(img);
+      background-image: v-bind(imgUrl);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center bottom;
