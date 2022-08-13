@@ -9,6 +9,7 @@
     <user-item :info="info"></user-item>
     <site-item></site-item>
     <time-item></time-item>
+    <quotes-item></quotes-item>
     <other-item></other-item>
   </div>
 </template>
@@ -17,6 +18,7 @@ import { ref } from 'vue'
 import UserItem from './component/UserItem'
 import SiteItem from './component/SiteItem'
 import TimeItem from './component/TimeItem'
+import QuotesItem from './component/QuotesItem'
 import OtherItem from './component/OtherItem'
 const info = ref({})
 
