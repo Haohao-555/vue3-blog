@@ -1,13 +1,12 @@
 <template>
   <el-card class="item" ref="blogRef">
     <div class="blog-item">
-      <div class="blog-img"></div>
+      <div class="blog-img">
+        <div class="top" v-if="blog.top">置顶</div>
+      </div>
       <div class="blog-info">
         <h3 class="title">{{ blog.title }}</h3>
         <div class="blog-about">{{blog.introduction}}</div>
-        <div class="tag-list">
-          <span v-for="tag in blog.tagList" :key="tag" class="tag">{{tag}}</span>
-        </div>
         <span class="classify">分类: {{blog.class}}</span>
         <div class="row"></div>
         <div class="time">发布时间：{{blog.time}}</div>
@@ -48,6 +47,7 @@ const imgUrl = `url('${props.blog.blogImg}')`
     overflow: hidden;
     transition: all 0.2s;
     .blog-img {
+      position: relative;
       height: 140px;
       @media screen and (min-width: 992px) {
         height: 280px;
@@ -62,6 +62,19 @@ const imgUrl = `url('${props.blog.blogImg}')`
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center bottom;
+      .top {
+         position: absolute;
+         right: -27px;
+         top: 16px;
+         padding-top: 4px;
+         padding-bottom: 4px;
+         width: 100px;
+         background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+         text-align: center;
+         font-size: 12px;
+         color: #fff;
+         transform: rotate(45deg);
+      }
     }
     .blog-info {
       padding: 12px;
@@ -72,26 +85,17 @@ const imgUrl = `url('${props.blog.blogImg}')`
         overflow: hidden;
         text-overflow: ellipsis;
         padding-bottom: 12px;
+        &:hover {
+          cursor: pointer;
+          color: #C00000;
+          opacity: 0.8;
+        }
       }
       .blog-about {
         padding: 12px;
         box-sizing: border-box;
         line-height: 24px;
         text-align: justify;
-      }
-      .tag-list {
-        display: flex;
-        .tag {
-          font-size: 12px;
-          padding: 4px 6px;
-          margin: 6px;
-          background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-          border-radius: 6px;
-          color: #fff;
-          &:hover {
-            cursor: pointer;
-          }
-        }
       }
       .classify {
         padding: 0px 8px;
@@ -102,8 +106,9 @@ const imgUrl = `url('${props.blog.blogImg}')`
       .row {
         margin-top: 12px;
         width: 100%;
-        height: 2px;
-        background-color: #ccc;
+        height: 1px;
+        background-color: #C00000;
+        opacity: 0.4;
         border-radius: 12px;
       }
       .time {

@@ -48,7 +48,9 @@ const sumbit = () => {
       height: 30px;
       border-radius: 6px;
       border: none;
-      background-color: #ceefe4;
+      background-color: #d00202;
+      color: #fff;
+      opacity: 0.6;
     }
   }
 }

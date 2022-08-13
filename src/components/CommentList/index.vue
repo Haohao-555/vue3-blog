@@ -10,7 +10,7 @@
         <div class="comment-container" >
           <div class="top">
             <div class="ava">
-              <el-image style="width: 50px; height: 50px" :src="item.ava" :fit="fit" />
+              <el-image style="width: 40px; height: 40px" :src="item.ava" :fit="fit" />
             </div>
           </div>
           <div class="info">
@@ -38,6 +38,7 @@ defineProps({
   margin-top: 12px;
   ::v-deep .el-card {
     margin-top: 12px;
+    border-radius: 0px !important;
   }
   .comment-container {
     display: flex;
@@ -60,7 +61,6 @@ defineProps({
         padding-left: 12px;
         box-sizing: border-box;
         .nickName {
-           padding-top: 6px;
         }
         .time {
           font-size: 12px;

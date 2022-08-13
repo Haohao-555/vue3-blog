@@ -47,7 +47,7 @@ const getBlogList = () => {
       time: '2021-11-06',
       class: '云音乐项目',
       blogImg: 'http://39.104.61.32/imgHome/blog/blog(2).jpg',
-      tagList: ['vue', 'vue全家桶', 'javascript'],
+      top: true,
       num: 1000,
       support: 1000
     },
@@ -59,7 +59,7 @@ const getBlogList = () => {
       time: '2021-11-07',
       class: '云音乐项目',
       blogImg: 'http://39.104.61.32/imgHome/blog/blog(3).jpg',
-      tagList: ['vue', 'vue全家桶', 'javascript'],
+      top: false,
       num: 1000,
       support: 1000
     },
@@ -71,7 +71,7 @@ const getBlogList = () => {
       time: '2021-11-06',
       class: '云音乐项目',
       blogImg: 'http://39.104.61.32/imgHome/blog/blog(1).png',
-      tagList: ['vue', 'vue全家桶', 'javascript'],
+      top: false,
       num: 1000,
       support: 1000
     },
@@ -83,7 +83,7 @@ const getBlogList = () => {
       time: '2021-11-06',
       class: '云音乐项目',
       blogImg: 'http://39.104.61.32/imgHome/blog/blog(4).jpg',
-      tagList: ['vue', 'vue全家桶', 'javascript'],
+      top: false,
       num: 1000,
       support: 1000
     }

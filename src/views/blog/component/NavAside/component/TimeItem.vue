@@ -84,7 +84,7 @@ onMounted(() => {
         color: #f5f5f5;
         margin-bottom: 8px;
         ::v-deep span {
-          color: rgb(92, 172, 255);
+          color: #C00000;
           font-weight: bolder;
           font-size: 14px;
         }
@@ -103,7 +103,7 @@ onMounted(() => {
           left: 0;
           height: 12px;
           transition: width 1.2s;
-          background-image: linear-gradient(to right bottom, red 25%, blue 75%);
+          background-image: linear-gradient(to right bottom, #C00000 25%, #F7B32D 75%);
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           ::v-deep span {
