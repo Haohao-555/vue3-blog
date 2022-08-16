@@ -40,28 +40,28 @@ const initTimeItem = () => {
   const finishHour = (hour / 24).toFixed(2)
   data[0] = {}
   data[0].text = `今天已经过去<span>&nbsp; ${hour} &nbsp;</span>个小时`
-  data[0].finsh = `<span>${finishHour * 100}%</span>`
+  data[0].finsh = `<span>${(hour / 24 * 100).toFixed(0)}%</span>`
   data[0].finshWidth = `${finishHour * 100}%`
 
   const today = time.getDay() === 0 ? 7 : time.getDay()
   const finishToday = (today / 7).toFixed(2)
   data[1] = {}
   data[1].text = `这周已经过去<span>&nbsp; ${today} &nbsp;</span>天`
-  data[1].finsh = `<span>${finishToday * 100}%</span>`
+  data[1].finsh = `<span>${(today / 7 * 100).toFixed(0)}%</span>`
   data[1].finshWidth = `${finishToday * 100}%`
 
   const weeks = time.getDate()
   const finishWeeks = (weeks / currentMonthDay).toFixed(2)
   data[2] = {}
   data[2].text = `本月已经过去<span>&nbsp; ${weeks} &nbsp;</span>天`
-  data[2].finsh = `<span>${finishWeeks * 100}%</span>`
+  data[2].finsh = `<span>${(weeks / currentMonthDay * 100).toFixed(0)}%</span>`
   data[2].finshWidth = `${finishWeeks * 100}%`
 
   const month = time.getMonth() + 1
   const finishMonth = (month / 12).toFixed(2)
   data[3] = {}
   data[3].text = `本年已经过去<span>&nbsp; ${month} &nbsp;</span>个月`
-  data[3].finsh = `<span>${finishMonth * 100}%</span>`
+  data[3].finsh = `<span>${(month / 12 * 100).toFixed(0)}%</span>`
   data[3].finshWidth = `${finishMonth * 100}%`
 
   dayDate.value = data
@@ -84,7 +84,7 @@ onMounted(() => {
         color: #f5f5f5;
         margin-bottom: 8px;
         ::v-deep span {
-          color: #C00000;
+          color: #c00000;
           font-weight: bolder;
           font-size: 14px;
         }
@@ -103,7 +103,11 @@ onMounted(() => {
           left: 0;
           height: 12px;
           transition: width 1.2s;
-          background-image: linear-gradient(to right bottom, #C00000 25%, #F7B32D 75%);
+          background-image: linear-gradient(
+            to right bottom,
+            #c00000 25%,
+            #f7b32d 75%
+          );
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           ::v-deep span {
