@@ -17,7 +17,9 @@
 import NavHeader from '@/components/NavHeader/index'
 </script>
 <style lang="scss" scoped>
+
 .layout {
+  //cursor: url("https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ac1d8cb2b1b46a384e986a7461df26a~tplv-k3u1fbpfcp-watermark.image?"), auto;
   overflow-x: hidden;
   position: relative;
   @media screen and (min-width: 970px) {
