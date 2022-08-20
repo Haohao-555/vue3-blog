@@ -13,3 +13,18 @@
   opacity: 0;
   transform: translateX(30px);
 }
+
+.modile-aside-leave-active,
+.modile-aside-enter-active {
+  left: all 5s;
+}
+
+.modile-aside-leave-enter-from {
+  opacity: 0;
+  right: 100%;
+}
+
+.modile-aside-leave-leave-to {
+  opacity: 0;
+  right: -100%;
+}

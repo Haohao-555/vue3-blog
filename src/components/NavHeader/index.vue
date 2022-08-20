@@ -5,52 +5,65 @@
  * @FilePath: \vue3-blog-1\src\components\NavHeader\index.vue
 -->
 <template>
-  <div class="nav-header">
-    <el-menu :default-active="activeRouter" :class="['el-menu-demo', isClick ? 'active' : '']" router mode="horizontal" background-color="#000" text-color="#fff" active-text-color="#fff">
-        <el-menu-item index="/blog">博客</el-menu-item>
-        <el-menu-item index="/message">留言榜</el-menu-item>
-        <el-menu-item index="/production">作品集</el-menu-item>
-        <el-menu-item index="/about">关于我</el-menu-item>
-    </el-menu>
+  <div class="header">
+    <el-main>
+      <div class="header-container">
+        <pc-nav :routeList="routeList" v-show="!current"></pc-nav>
+        <mobile-nav v-show="current"></mobile-nav>
+      </div>
+    </el-main>
   </div>
 </template>
-
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-const router = useRouter()
-
-const activeRouter = ref('/blog')
-watch(
-  () => router.currentRoute.value.path,
-  val => {
-    activeRouter.value = val
+import { ref, onMounted } from 'vue'
+import { isMobile } from '@/util/head.js'
+import PcNav from './component/PCNav'
+import MobileNav from './component/MobileNav'
+const routeList = ref([
+  {
+    route: '/index',
+    text: '主页'
   },
   {
-    immediate: true
+    route: '/blog',
+    text: '博客'
+  },
+  {
+    route: '/message',
+    text: '留言板'
+  },
+  {
+    route: '/production',
+    text: '作品集'
+  },
+  {
+    route: '/about',
+    text: '关于我'
   }
-)
+])
+const current = ref(false)
+onMounted(() => {
+  current.value = isMobile()
+})
 </script>
 <style lang="scss" scoped>
-::v-deep .el-menu--horizontal {
-  border-bottom: none;
+::v-deep .el-main {
+  padding-top: 0px;
 }
-::v-deep .el-menu-item:hover {
-  outline: 0 !important;
-  color: #fff !important;
-  background: transparent !important;
-}
-::v-deep .el-menu-item.is-active {
-  color: #fff !important;
-  background: transparent !important;
-}
-.nav-header {
-  z-index: 100;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  .active {
-    background-color: #000;
+
+.header {
+  height: 50px;
+  background-color: rgba(255,255,255,.5);
+  padding: 0px 12px;
+  box-sizing: border-box;
+  line-height: 50px;
+  color: #000;
+  z-index: 999;
+  .header-container {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky !important;
+    top: 0;
   }
 }
 </style>
