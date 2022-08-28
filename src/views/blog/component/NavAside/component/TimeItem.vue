@@ -8,7 +8,7 @@
   <div class="time">
       <el-card>
         <div class="time-container">
-          <div class="title">⏰人生倒计时</div>
+          <div class="title" style="display: flex;">⏰ <beat-text text="人生倒计时"></beat-text></div>
           <div class="content">
             <div class="item" v-for="(item, i) in dayDate" :key="i">
                <div class="text" v-html="item.text"></div>
@@ -23,6 +23,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
+import BeatText from '@/components/BeatText'
 const dayDate = ref([])
 
 // 获取当前月份多少天

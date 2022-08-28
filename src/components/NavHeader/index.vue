@@ -9,6 +9,7 @@
   <div class="header">
     <el-main>
       <div class="header-container">
+        <div class="title">岁月可贵の博客</div>
         <pc-nav :routeList="routeList" v-show="!current"></pc-nav>
         <mobile-nav v-show="current"></mobile-nav>
       </div>
@@ -51,10 +52,19 @@ onMounted(() => {
   color: #000;
   z-index: 999;
   .header-container {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     position: sticky !important;
     top: 0;
+    .title {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+      font-weight: bolder;
+    }
   }
 }
 </style>

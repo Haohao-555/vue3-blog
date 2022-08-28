@@ -7,7 +7,7 @@
 <template>
    <el-card>
     <div class="site">
-      <div class="title">⚡网站技术栈</div>
+      <div class="title" style="display: flex;">⚡ <beat-text text="网站技术栈"></beat-text></div>
       <div class="content">
         <img src="https://img.shields.io/badge/vue3-3.2.8-brightgreen?style=flat-square" alt="">
         <img src="https://img.shields.io/badge/vue--router-4.0.11-yellowgreen?style=flat-square" alt="">
@@ -17,7 +17,9 @@
     </div>
    </el-card>
 </template>
-<script setup></script>
+<script setup>
+import BeatText from '@/components/BeatText'
+</script>
 <style lang="scss" scoped>
 .site {
   .title {

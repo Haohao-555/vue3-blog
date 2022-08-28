@@ -8,7 +8,7 @@
   <div class="quotes">
       <el-card>
         <div class="quotes-container">
-          <div class="title">☕ 鸡汤</div>
+          <div class="title" style="display: flex;">☕ <beat-text text="鸡汤"></beat-text></div>
           <div class="content">待填充</div>
         </div>
       </el-card>
@@ -16,6 +16,7 @@
 </template>
 <script setup>
 import {} from 'vue'
+import BeatText from '@/components/BeatText'
 </script>
 <style lang="scss" scoped>
 .quotes {
