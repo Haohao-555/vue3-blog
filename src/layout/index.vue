@@ -49,10 +49,6 @@ const close = () => {
     background-position: center bottom;
   }
   @media screen and (max-width: 750px) {
-    // background-image: url('http://39.104.61.32/imgHome/blog/mobile-bg.jpg');
-    background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
-    background-image: linear-gradient(to top, #d5dee7 0%, #ffafbd 0%, #c9ffbf 100%);
-    background-image: linear-gradient(to top, #b3ffab 0%, #12fff7 100%);
     background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
     background-position: center bottom;
   }
@@ -76,6 +72,7 @@ const close = () => {
      height: 100vh;
      background: transparent;
      transition: left .5s;
+     z-index: 999;
   }
   .show {
     left: 0px;

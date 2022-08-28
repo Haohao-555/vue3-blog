@@ -104,11 +104,7 @@ onMounted(() => {
           left: 0;
           height: 12px;
           transition: width 1.2s;
-          background-image: linear-gradient(
-            to right bottom,
-            #c00000 25%,
-            #f7b32d 75%
-          );
+          background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           ::v-deep span {

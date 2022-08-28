@@ -82,7 +82,7 @@ const routeTo = (path) => {
   top: 0;
   width: 65%;
   height: 100vh;
-  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
   .container {
     padding-top: 20px;
     .user-info {

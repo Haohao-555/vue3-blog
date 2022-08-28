@@ -48,7 +48,7 @@ const sumbit = () => {
       height: 30px;
       border-radius: 6px;
       border: none;
-      background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+      background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
       color: #fff;
       opacity: 0.6;
     }
