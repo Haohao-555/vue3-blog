@@ -28,19 +28,25 @@
               </el-row>
         </div>
         <div class="nav-list">
-           <div class="nav" v-for="(item, i) in routeList" :key="i" :class="{'active': item.route == activeRouter ? true: false}" @click="routeTo(item)">{{item.text}}</div>
+           <div class="nav" v-for="(item, i) in routeList" :key="i" @click="routeTo(item.path)" :class="{'active': item.path == activeRouter ? true: false}">{{item.meta.title}}</div>
         </div>
       </div>
     </el-scrollbar>
   </div>
 </template>
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-
+import { filtersRoutes } from '@/util/router'
 const router = useRouter()
 const store = useStore()
+
+const routeList = ref([])
+onMounted(() => {
+  const fRoutes = filtersRoutes(router.getRoutes())
+  routeList.value = fRoutes[0].children
+})
 
 const info = ref({
   avaUrl: 'https://i.loli.net/2021/07/25/B7uKGgRdVXp8L3N.jpg',
@@ -50,28 +56,6 @@ const info = ref({
   tagNum: 10,
   classNum: 12
 })
-const routeList = ref([
-  // {
-  //   route: '/index',
-  //   text: '主页'
-  // },
-  {
-    route: '/blog',
-    text: '博客'
-  },
-  {
-    route: '/message',
-    text: '留言板'
-  },
-  {
-    route: '/production',
-    text: '作品集'
-  },
-  {
-    route: '/about',
-    text: '关于我'
-  }
-])
 
 const activeRouter = ref('/blog')
 watch(
@@ -84,10 +68,10 @@ watch(
   }
 )
 
-const routeTo = (item) => {
+const routeTo = (path) => {
   store.commit('modile/changeAsideShow', false)
   router.push({
-    path: item.route
+    path: path
   })
 }
 </script>

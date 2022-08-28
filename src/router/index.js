@@ -9,26 +9,34 @@ const routes = [
     redirect: '/blog',
     children: [
       {
-        path: '/message',
-        component: () => import('@/views/message/index')
+        path: '/blog',
+        component: () => import('@/views/blog/index'),
+        meta: {
+          title: '博客'
+        }
       },
       {
-        path: '/blog',
-        component: () => import('@/views/blog/index')
+        path: '/message',
+        component: () => import('@/views/message/index'),
+        meta: {
+          title: '留言板'
+        }
       },
       {
         path: '/production',
-        component: () => import('@/views/production/index')
+        component: () => import('@/views/production/index'),
+        meta: {
+          title: '作品集'
+        }
       },
       {
         path: '/about',
-        component: () => import('@/views/about/index')
+        component: () => import('@/views/about/index'),
+        meta: {
+          title: '关于我'
+        }
       }
     ]
-  },
-  {
-    path: '/index',
-    component: () => import('@/views/index/index')
   }
 ]
 

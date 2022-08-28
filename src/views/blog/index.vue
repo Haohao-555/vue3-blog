@@ -101,9 +101,6 @@ getBlogList()
 .blog {
   .blog-bg {
     .blog-container {
-      .banner {
-        height: 300px;
-      }
     }
   }
 }

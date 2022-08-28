@@ -21,28 +21,17 @@ import { ref, onMounted } from 'vue'
 import { isMobile } from '@/util/head.js'
 import PcNav from './component/PCNav'
 import MobileNav from './component/MobileNav'
-const routeList = ref([
-  // {
-  //   route: '/index',
-  //   text: '主页'
-  // },
-  {
-    route: '/blog',
-    text: '博客'
-  },
-  {
-    route: '/message',
-    text: '留言板'
-  },
-  {
-    route: '/production',
-    text: '作品集'
-  },
-  {
-    route: '/about',
-    text: '关于我'
-  }
-])
+import { filtersRoutes } from '@/util/router'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const routeList = ref([])
+onMounted(() => {
+  const fRoutes = filtersRoutes(router.getRoutes())
+  routeList.value = fRoutes[0].children
+})
+
 const current = ref(false)
 onMounted(() => {
   current.value = isMobile()

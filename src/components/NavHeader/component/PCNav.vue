@@ -1,6 +1,6 @@
 <template>
     <div class="pc-nav">
-      <div class="nav" v-for="(item, i) in routeList" :key="i" :class="{'active': item.route == activeRouter ? true: false}" @click="routeTo(item)">{{item.text}}</div>
+      <div class="nav" v-for="(item, i) in routeList" :key="i" @click="routeTo(item.path)" :class="{'active': item.path == activeRouter ? true: false}">{{item.meta.title}}</div>
     </div>
 </template>
 <script setup>
@@ -29,9 +29,9 @@ watch(
   }
 )
 
-const routeTo = (item) => {
+const routeTo = (path) => {
   router.push({
-    path: item.route
+    path: path
   })
 }
 </script>
