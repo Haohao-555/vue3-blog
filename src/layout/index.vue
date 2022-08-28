@@ -17,7 +17,7 @@
           </transition>
         </router-view>
       </div>
-      <div class="mask" v-show="$store.getters.showAside" @click.self="close()">
+      <div class="mask" @click.self="close()" :class="{'show': $store.getters.showAside}">
           <modile-asside></modile-asside>
       </div>
    </div>
@@ -67,10 +67,14 @@ const close = () => {
   .mask {
      position: absolute;
      top: 0;
-     left: 0;
+     left: 100%;
      width: 100%;
      height: 100vh;
-     background: rgba(0, 0, 0, 0.4);
+     background: transparent;
+     transition: left 1.2s;
+  }
+  .show {
+    left: 0px;
   }
   .aside {
     position: absolute;
@@ -81,4 +85,5 @@ const close = () => {
     height: 100vh;
   }
 }
+
 </style>

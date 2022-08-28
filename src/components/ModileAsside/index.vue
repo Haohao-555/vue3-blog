@@ -51,10 +51,10 @@ const info = ref({
   classNum: 12
 })
 const routeList = ref([
-  {
-    route: '/index',
-    text: '主页'
-  },
+  // {
+  //   route: '/index',
+  //   text: '主页'
+  // },
   {
     route: '/blog',
     text: '博客'
@@ -98,7 +98,7 @@ const routeTo = (item) => {
   top: 0;
   width: 65%;
   height: 100vh;
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
   .container {
     padding-top: 20px;
     .user-info {

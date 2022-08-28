@@ -24,8 +24,11 @@ const routes = [
         path: '/about',
         component: () => import('@/views/about/index')
       }
-
     ]
+  },
+  {
+    path: '/index',
+    component: () => import('@/views/index/index')
   }
 ]
 

@@ -5,6 +5,7 @@
  * @FilePath: \vue3-blog-1\src\components\NavHeader\index.vue
 -->
 <template>
+<el-affix :offset="0">
   <div class="header">
     <el-main>
       <div class="header-container">
@@ -13,6 +14,7 @@
       </div>
     </el-main>
   </div>
+</el-affix>
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -20,10 +22,10 @@ import { isMobile } from '@/util/head.js'
 import PcNav from './component/PCNav'
 import MobileNav from './component/MobileNav'
 const routeList = ref([
-  {
-    route: '/index',
-    text: '主页'
-  },
+  // {
+  //   route: '/index',
+  //   text: '主页'
+  // },
   {
     route: '/blog',
     text: '博客'
