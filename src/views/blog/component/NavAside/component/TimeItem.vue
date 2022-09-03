@@ -2,7 +2,7 @@
  * @Date: 2022-08-13 08:38:13
  * @Author: 浩
  * @LastEditors: 浩
- * @FilePath: \vue3-blog-1\src\views\blog\component\NavAside\component\TimeItem.vue
+ * @FilePath: \vue3-blog\src\views\blog\component\NavAside\component\TimeItem.vue
 -->
 <template>
   <div class="time">
@@ -73,6 +73,7 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
 .time {
   .time-container {
     .title {
@@ -82,10 +83,10 @@ onMounted(() => {
     .content {
       font-size: 12px;
       .text {
-        color: #f5f5f5;
+        font-family: 'Microsoft YaHei';
         margin-bottom: 8px;
         ::v-deep span {
-          color: #c00000;
+          color: $activeText;
           font-weight: bolder;
           font-size: 14px;
         }
@@ -104,7 +105,7 @@ onMounted(() => {
           left: 0;
           height: 12px;
           transition: width 1.2s;
-          background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+          background-image: linear-gradient(-20deg, #3195d8 0%, #24f2e8 100%);
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           ::v-deep span {

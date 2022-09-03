@@ -31,6 +31,7 @@ const imgUrl = `url('${props.blog.blogImg}')`
 
 </script>
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
 .item {
   &:hover {
     @media screen and (min-width: 970px) {
@@ -87,7 +88,7 @@ const imgUrl = `url('${props.blog.blogImg}')`
         padding-bottom: 12px;
         &:hover {
           cursor: pointer;
-          color: #C00000;
+          color: $activeText;
           opacity: 0.8;
         }
       }

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2022-09-03 09:40:15
+ * @Author: 浩
+ * @LastEditors: 浩
+ * @FilePath: \vue3-blog\src\components\NavHeader\component\PCNav.vue
+-->
 <template>
     <div class="pc-nav">
       <div class="nav" v-for="(item, i) in routeList" :key="i" @click="routeTo(item.path)" :class="{'active': item.path == activeRouter ? true: false}">{{item.meta.title}}</div>
@@ -29,17 +35,18 @@ watch(
   }
 )
 
-const routeTo = (path) => {
+const routeTo = path => {
   router.push({
     path: path
   })
 }
 </script>
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
 .pc-nav {
-   display: flex;
+  display: flex;
   .active {
-    color: #c00000;
+    color: $activeText;
   }
   .nav {
     padding: 0px 16px;

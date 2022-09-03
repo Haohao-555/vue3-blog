@@ -2,7 +2,7 @@
  * @Date: 2022-07-23 15:32:15
  * @Author: 浩
  * @LastEditors: 浩
- * @FilePath: \vue3-blog-1\src\layout\index.vue
+ * @FilePath: \vue3-blog\src\layout\index.vue
 -->
 <template>
    <div class="layout" :class="{'isoverhidden': $store.getters.showAside}">
@@ -45,11 +45,11 @@ const close = () => {
   min-height: 100%;
   background-attachment: fixed;
   @media screen and (min-width: 970px) {
-    background-image: url('http://39.104.61.32/imgHome/blog/bg(1).jpg');
+    background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
     background-position: center bottom;
   }
   @media screen and (max-width: 750px) {
-    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
     background-position: center bottom;
   }
   .drop-down {
@@ -65,14 +65,14 @@ const close = () => {
     }
   }
   .mask {
-     position: absolute;
-     top: 0;
-     left: 100%;
-     width: 100%;
-     height: 100vh;
-     background: transparent;
-     transition: left .5s;
-     z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    transition: left 0.5s;
+    z-index: 999;
   }
   .show {
     left: 0px;
@@ -86,5 +86,4 @@ const close = () => {
     height: 100vh;
   }
 }
-
 </style>

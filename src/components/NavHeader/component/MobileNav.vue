@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2022-09-03 09:40:15
+ * @Author: 浩
+ * @LastEditors: 浩
+ * @FilePath: \vue3-blog\src\components\NavHeader\component\MobileNav.vue
+-->
 <template>
     <div class="mobile-nav" @click="showAside()" :class="{'active': $store.getters.showAside}">
       <div class="row"></div>
@@ -25,10 +31,11 @@ const showAside = () => {
 }
 </script>
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
 .active {
-  border-color: #c00000 !important;
+  border-color: $activeText !important;
   .row {
-    background-color: #c00000 !important;
+    background-color: $activeText !important;
   }
 }
 .mobile-nav {

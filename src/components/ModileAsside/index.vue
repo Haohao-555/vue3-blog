@@ -76,13 +76,14 @@ const routeTo = (path) => {
 }
 </script>
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
 .modile-aside {
   position: absolute;
   right: 0;
   top: 0;
   width: 65%;
   height: 100vh;
-  background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   .container {
     padding-top: 20px;
     .user-info {
@@ -115,7 +116,7 @@ const routeTo = (path) => {
       padding: 12px 0px;
       text-align: center;
       .active {
-         color: #c00000;
+         color: $activeText;
       }
       .nav {
         line-height: 20px;

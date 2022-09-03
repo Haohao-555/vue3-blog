@@ -2,7 +2,7 @@
  * @Date: 2022-07-24 09:31:41
  * @Author: 浩
  * @LastEditors: 浩
- * @FilePath: \vue3-blog-1\src\views\blog\index.vue
+ * @FilePath: \vue3-blog\src\views\blog\index.vue
 -->
 <template>
   <div class="blog">
@@ -46,7 +46,7 @@ const getBlogList = () => {
         '🌈前序 本来是昨天要写总结的，昨天就已经基本完成了将音乐进度条移植到项目中并且与音频实现联动的。',
       time: '2021-11-06',
       class: '云音乐项目',
-      blogImg: 'http://39.104.61.32/imgHome/blog/blog(2).jpg',
+      blogImg: 'http://39.104.61.32/imgHome/blog/blog_2.webp',
       top: true,
       num: 1000,
       support: 1000
@@ -58,7 +58,7 @@ const getBlogList = () => {
         '🌈成果展示项目到今天已经经过 12 天了，下面把这 12 天的目前页面效果展示如下（目前仅差歌曲播放页）🥰 💪🏻主页 💪🏻歌手 💪🏻排行版 💪🏻MV 💪🏻MV 详情 💪🏻歌手介绍 💪🏻歌单详情一 💪🏻歌单详情二 💪🏻歌单详情三 由于时间比较仓促',
       time: '2021-11-07',
       class: '云音乐项目',
-      blogImg: 'http://39.104.61.32/imgHome/blog/blog(3).jpg',
+      blogImg: 'http://39.104.61.32/imgHome/blog/blog_3.webp',
       top: false,
       num: 1000,
       support: 1000
@@ -70,7 +70,7 @@ const getBlogList = () => {
         '🌈前序 本来是昨天要写总结的，昨天就已经基本完成了将音乐进度条移植到项目中并且与音频实现联动的。',
       time: '2021-11-06',
       class: '云音乐项目',
-      blogImg: 'http://39.104.61.32/imgHome/blog/blog(1).png',
+      blogImg: 'http://39.104.61.32/imgHome/blog/blog_1.webp',
       top: false,
       num: 1000,
       support: 1000
@@ -82,7 +82,7 @@ const getBlogList = () => {
         '🌈前序 本来是昨天要写总结的，昨天就已经基本完成了将音乐进度条移植到项目中并且与音频实现联动的。',
       time: '2021-11-06',
       class: '云音乐项目',
-      blogImg: 'http://39.104.61.32/imgHome/blog/blog(4).jpg',
+      blogImg: 'http://39.104.61.32/imgHome/blog/blog_4.webp',
       top: false,
       num: 1000,
       support: 1000
