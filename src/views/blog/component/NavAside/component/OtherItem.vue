@@ -8,7 +8,7 @@
   <div class="other">
       <el-card>
         <div class="other-container">
-          <div class="title" style="display: flex;">💎 <beat-text text='其他信息'></beat-text></div>
+          <div class="title" style="display: flex;">💎 <beat-text text='网站信息'></beat-text></div>
           <div class="content">待填充</div>
         </div>
       </el-card>

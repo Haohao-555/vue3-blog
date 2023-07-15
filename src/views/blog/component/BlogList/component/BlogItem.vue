@@ -1,15 +1,15 @@
 <template>
-  <el-card class="item" ref="blogRef">
-    <div class="blog-item">
+  <el-card class="item" :body-style="{padding: '0px'}">
+    <div class="blog-item" @click="getBlogContent()">
       <div class="blog-img">
-        <div class="top" v-if="blog.top">置顶</div>
+        <div class="top" v-if="blog.top || true">置顶</div>
       </div>
       <div class="blog-info">
         <h3 class="title">{{ blog.title }}</h3>
         <div class="blog-about">{{blog.introduction}}</div>
-        <span class="classify">分类: {{blog.class}}</span>
+        <span class="classify">分类: {{blog.classify}}</span>
         <div class="row"></div>
-        <div class="time">发布时间：{{blog.time}}</div>
+        <div class="time">发布时间：{{blog.createdAt}}</div>
       </div>
     </div>
     <div class="hover-box"></div>
@@ -17,32 +17,40 @@
 </template>
 <script setup>
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps({
   blog: {
     type: Object,
     default: () => {
-      return []
+      return {}
     }
   }
 })
 
 // eslint-disable-next-line
 const imgUrl = `url('${props.blog.blogImg}')`
-
+const getBlogContent = () => {
+  router.push({
+    path: '/blogcontent',
+    query: {
+      id: props.blog.id
+    }
+  })
+}
 </script>
 <style lang="scss" scoped>
-@import '@/styles/theme.scss';
 .item {
-  &:hover {
-    @media screen and (min-width: 970px) {
-      transform: translateY(-10px);
-      box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
-      .hover-box {
-        left: 110%;
-        transition: all 0.3s;
-      }
-    }
-  }
+  // &:hover {
+  //   @media screen and (min-width: 970px) {
+  //     transform: translateY(-10px);
+  //     box-shadow: 0 26px 40px -24px rgb(0 36 100 / 50%);
+  //     .hover-box {
+  //       left: 110%;
+  //       transition: all 0.3s;
+  //     }
+  //   }
+  // }
   .blog-item {
     position: relative;
     overflow: hidden;
@@ -64,17 +72,17 @@ const imgUrl = `url('${props.blog.blogImg}')`
       background-size: cover;
       background-position: center bottom;
       .top {
-         position: absolute;
-         right: -27px;
-         top: 16px;
-         padding-top: 4px;
-         padding-bottom: 4px;
-         width: 100px;
-         background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-         text-align: center;
-         font-size: 12px;
-         color: #fff;
-         transform: rotate(45deg);
+        position: absolute;
+        right: -27px;
+        top: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        width: 100px;
+        background-image: linear-gradient(to top, var(--el-color-primary) 0%, #fff 100%);
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        transform: rotate(45deg);
       }
     }
     .blog-info {
@@ -88,7 +96,7 @@ const imgUrl = `url('${props.blog.blogImg}')`
         padding-bottom: 12px;
         &:hover {
           cursor: pointer;
-          color: $activeText;
+          color: var(--el-color-primary);
           opacity: 0.8;
         }
       }
@@ -108,7 +116,7 @@ const imgUrl = `url('${props.blog.blogImg}')`
         margin-top: 12px;
         width: 100%;
         height: 1px;
-        background-color: #C00000;
+        background-color: var(--el-color-primary);
         opacity: 0.4;
         border-radius: 12px;
       }

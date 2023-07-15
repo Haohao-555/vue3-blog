@@ -16,7 +16,6 @@ const init = () => {
   const letters = props.text.split('')
   textDOM.value.textContent = ''
   letters.forEach((letter, i) => {
-    console.log(i, letter)
     const span = document.createElement('span')
     span.textContent = letter
     span.style.animationDelay = `${i / 10}s`
@@ -40,7 +39,7 @@ onMounted(() => {
 }
 @keyframes bounce {
   to {
-    transform: translateY(-6px);
+    transform: translateY(-3px);
   }
 }
 </style>

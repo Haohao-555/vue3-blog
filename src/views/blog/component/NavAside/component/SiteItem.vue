@@ -1,13 +1,7 @@
-<!--
- * @Date: 2022-08-06 13:30:03
- * @Author: 浩
- * @LastEditors: 浩
- * @FilePath: \vue3-blog-1\src\views\blog\component\NavAside\component\SiteItem.vue
--->
 <template>
    <el-card>
     <div class="site">
-      <div class="title" style="display: flex;">⚡ <beat-text text="网站技术栈"></beat-text></div>
+      <div class="title" style="display: flex;">⚡ <beat-text text="技术栈"></beat-text></div>
       <div class="content">
         <img src="https://img.shields.io/badge/vue3-3.2.8-brightgreen?style=flat-square" alt="">
         <img src="https://img.shields.io/badge/vue--router-4.0.11-yellowgreen?style=flat-square" alt="">

@@ -23,11 +23,11 @@ module.exports = {
   },
   devServer: {
     proxy: {
-      '/api': {
-        target: 'https://api.imooc-admin.lgdsunday.club/',
+      '/vue3-blogapi': {
+        target: 'http://localhost:4000/',
         changeOrigin: true // 是否跨域
       }
     }
-  },
-  publicPath: '/vue3-blog/'
+  }
+  // publicPath: '/vue3-blog/'
 }

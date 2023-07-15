@@ -1,53 +1,56 @@
 <template>
-   <div class="banner">
-    <div class="banner-container">
-        <p class="shining">用尽一切奔向你</p>
-    </div>
-   </div>
+  <el-card :body-style="{ padding: '0px' }">
+    <el-carousel :interval="5000">
+      <el-carousel-item v-for="item in bannerList" :key="item.id">
+        <div class="banner-container" v-html="item.content" :style="item.style"></div>
+      </el-carousel-item>
+    </el-carousel>
+  </el-card>
 </template>
 <script setup>
-import {} from 'vue'
+import { onMounted, ref } from 'vue'
+const bannerList = ref([])
+const getBanner = () => {
+  bannerList.value = [
+    {
+      id: 1,
+      content: `
+        <div style='padding: 10px; display:flex;  justify-content: center; align-items: center;'>
+         <h3>招商广告 1</h3>  
+        <div>
+      `,
+      style: {
+        height: '100%'
+      }
+    },
+    {
+      id: 2,
+      content: `
+        <div style='padding: 10px; display:flex;  justify-content: center; align-items: center;'>
+         <h3>招商广告 2</h3>  
+        <div>
+      `,
+      style: {
+        height: '100%'
+      }
+    }
+  ]
+}
+onMounted(() => {
+  getBanner()
+})
 </script>
 <style lang="scss" scoped>
-@import url(https://fonts.googleapis.com/css?family=Lato);
 .banner {
+  height: max-content;
+  margin-bottom: 12px;
+}
+::v-deep .el-carousel__container {
   @media screen and (min-width: 970px) {
-    height: 200px;
+    height: 300px !important;
   }
   @media screen and (max-width: 750px) {
-    height: 200px;
-  }
-
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.shining {
-  font-size: 2em;
-  font-family: Lato, sans-serif;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  background-size: 80%;
-  background-repeat: no-repeat;
-  // below two lines create text gradient effect
-  color: transparent;
-  background-clip: text;
-  animation: shining 3s linear infinite;
-}
-
-@keyframes shining {
-  from {
-    background-position: -500%;
-  }
-  to {
-    background-position: 500%;
+    height: 200px !important;
   }
 }
 </style>

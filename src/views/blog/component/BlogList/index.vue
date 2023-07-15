@@ -22,9 +22,4 @@ defineProps({
 })
 </script>
 <style lang="scss" scoped>
-::v-deep .el-card .el-card__body {
-  padding: 0px;
-}
-.blog-list {
-}
 </style>

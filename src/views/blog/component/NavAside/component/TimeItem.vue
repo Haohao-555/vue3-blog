@@ -1,14 +1,8 @@
-<!--
- * @Date: 2022-08-13 08:38:13
- * @Author: 浩
- * @LastEditors: 浩
- * @FilePath: \vue3-blog\src\views\blog\component\NavAside\component\TimeItem.vue
--->
 <template>
   <div class="time">
       <el-card>
         <div class="time-container">
-          <div class="title" style="display: flex;">⏰ <beat-text text="人生倒计时"></beat-text></div>
+          <div class="title" style="display: flex;">⏰ <beat-text text="时间沙漏"></beat-text></div>
           <div class="content">
             <div class="item" v-for="(item, i) in dayDate" :key="i">
                <div class="text" v-html="item.text"></div>
@@ -45,20 +39,20 @@ const initTimeItem = () => {
   data[0].finshWidth = `${finishHour * 100}%`
 
   const today = time.getDay() === 0 ? 7 : time.getDay()
-  const finishToday = (today / 7).toFixed(2)
+  const finishToday = ((today - 1) / 7).toFixed(2)
   data[1] = {}
-  data[1].text = `这周已经过去<span>&nbsp; ${today} &nbsp;</span>天`
-  data[1].finsh = `<span>${(today / 7 * 100).toFixed(0)}%</span>`
+  data[1].text = `这周已经过去<span>&nbsp; ${(today - 1)} &nbsp;</span>天`
+  data[1].finsh = `<span>${((today - 1) / 7 * 100).toFixed(0)}%</span>`
   data[1].finshWidth = `${finishToday * 100}%`
 
-  const weeks = time.getDate()
+  const weeks = time.getDate() - 1
   const finishWeeks = (weeks / currentMonthDay).toFixed(2)
   data[2] = {}
   data[2].text = `本月已经过去<span>&nbsp; ${weeks} &nbsp;</span>天`
   data[2].finsh = `<span>${(weeks / currentMonthDay * 100).toFixed(0)}%</span>`
   data[2].finshWidth = `${finishWeeks * 100}%`
 
-  const month = time.getMonth() + 1
+  const month = time.getMonth()
   const finishMonth = (month / 12).toFixed(2)
   data[3] = {}
   data[3].text = `本年已经过去<span>&nbsp; ${month} &nbsp;</span>个月`
@@ -66,14 +60,12 @@ const initTimeItem = () => {
   data[3].finshWidth = `${finishMonth * 100}%`
 
   dayDate.value = data
-  console.log(dayDate.value)
 }
 onMounted(() => {
   initTimeItem()
 })
 </script>
 <style lang="scss" scoped>
-@import '@/styles/theme.scss';
 .time {
   .time-container {
     .title {
@@ -86,7 +78,7 @@ onMounted(() => {
         font-family: 'Microsoft YaHei';
         margin-bottom: 8px;
         ::v-deep span {
-          color: $activeText;
+          color: var(--el-color-primary);
           font-weight: bolder;
           font-size: 14px;
         }
@@ -105,7 +97,7 @@ onMounted(() => {
           left: 0;
           height: 12px;
           transition: width 1.2s;
-          background-image: linear-gradient(-20deg, #3195d8 0%, #24f2e8 100%);
+          background-image: linear-gradient(-20deg, #d8f9b8 0%, var(--el-color-primary) 100%);
           border-bottom-right-radius: 12px;
           border-top-right-radius: 12px;
           ::v-deep span {

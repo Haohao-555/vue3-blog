@@ -1,36 +1,22 @@
-<!--
- * @Date: 2022-07-23 15:32:15
- * @Author: 浩
- * @LastEditors: 浩
- * @FilePath: \vue3-blog\src\layout\index.vue
--->
 <template>
-   <div class="layout" :class="{'isoverhidden': $store.getters.showAside}">
-      <div class="layout-container">
-        <div class="drop-down"></div>
-        <nav-header></nav-header>
+  <div class="layout" :class="{ isoverhidden: $store.getters.showAside }">
+    <div class="layout-container">
+      <div class="drop-down"></div>
+      <nav-header></nav-header>
+      <el-scrollbar>
         <router-view v-slot="{ Component, route }">
           <transition name="fade-transform" mode="out-in">
-            <keep-alive>
-              <component :is="Component" :key="route.path"></component>
-            </keep-alive>
+            <!-- <keep-alive> -->
+            <component :is="Component" :key="route.path"></component>
+            <!-- </keep-alive> -->
           </transition>
         </router-view>
-      </div>
-      <div class="mask" @click.self="close()" :class="{'show': $store.getters.showAside}">
-          <modile-asside></modile-asside>
-      </div>
-   </div>
+      </el-scrollbar>
+    </div>
+  </div>
 </template>
 <script setup>
 import NavHeader from '@/components/NavHeader/index'
-import ModileAsside from '@/components/ModileAsside/index'
-import { useStore } from 'vuex'
-const store = useStore()
-
-const close = () => {
-  store.commit('modile/changeAsideShow', false)
-}
 </script>
 <style lang="scss" scoped>
 .isoverhidden {
@@ -44,26 +30,18 @@ const close = () => {
   background-size: cover;
   min-height: 100%;
   background-attachment: fixed;
-  @media screen and (min-width: 970px) {
-    background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
-    background-position: center bottom;
-  }
-  @media screen and (max-width: 750px) {
-    background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
-    background-position: center bottom;
-  }
-  .drop-down {
-    @media screen and (min-width: 970px) {
-      position: fixed;
-      right: 5px;
-      top: -600px;
-      width: 70px;
-      height: 900px;
-      background-image: url('~@/assets/1.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-  }
+  // .drop-down {
+  //   @media screen and (min-width: 970px) {
+  //     position: fixed;
+  //     right: 5px;
+  //     top: -600px;
+  //     width: 70px;
+  //     height: 900px;
+  //     background-image: url('~@/assets/1.png');
+  //     background-repeat: no-repeat;
+  //     background-size: contain;
+  //   }
+  // }
   .mask {
     position: absolute;
     top: 0;

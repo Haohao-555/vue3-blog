@@ -1,5 +1,5 @@
 @import './transition.scss';
-@import './scroball.css';
+
 html,
 body {
   height: 100%;
@@ -10,8 +10,12 @@ body {
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
-
+::selection{ 
+  background-color:var(--el-color-primary); 
+  color:#000; 
+}
 #app {
   height: 100%;
 }
@@ -43,15 +47,4 @@ a:hover {
 
 div:focus {
   outline: none;
-}
-
-.clearfix {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: ' ';
-    clear: both;
-    height: 0;
-  }
 }

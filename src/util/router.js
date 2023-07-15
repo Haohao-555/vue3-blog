@@ -12,13 +12,14 @@ const getChilderenRoutes = routes => {
 export const filtersRoutes = routes => {
   // 获取所有子集路由
   const childrenRoutes = getChilderenRoutes(routes)
-  // 根据子集路由进行查重操作
-  return routes.filter(route => {
+  const a = routes.filter(route => {
     // 根据 route 在 childrenRoutes 中进行查重, 把所有重复路由表 剔除
     return !childrenRoutes.find(childrenRoute => {
       return childrenRoute.path === route.path
     })
   })
+  a[0].children = a[0].children.filter(item => item.path !== '/blogcontent')
+  return a
 }
 function isNull (data) {
   if (!data) return true

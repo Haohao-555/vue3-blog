@@ -5,13 +5,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(73, 177, 245, 0.2);
-  border-radius: 2em;
+  /* border-radius: 2em; */
 }
-/* #a8edea 0%, #fed6e3  */
 
 ::-webkit-scrollbar-thumb {
-  background-color: #616161;;
+  background-color: #616161;
+  background-color: var(--el-color-primary);
   background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
   border-radius: 2em;
 }

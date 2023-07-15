@@ -1,9 +1,11 @@
 import { createStore } from 'vuex'
-import modile from './module/modile'
+import app from './modules/app'
+import theme from './modules/theme'
 import getters from './getters'
 export default createStore({
   getters,
   modules: {
-    modile
+    app,
+    theme
   }
 })
